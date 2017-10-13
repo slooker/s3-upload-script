@@ -13,9 +13,10 @@ const s3 = new S3({
   }
 })
 const params = {
+  ACL: 'public-read',
   Body: blob,
   Bucket: process.env.S3_BUCKET,
-  Key: `/events/${filename}`
+  Key: `events/${filename}`
 }
 console.info(`blob size: ${params.Body.length}`)
 console.info(`Bucket: ${params.Bucket}`)
